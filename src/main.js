@@ -1,3 +1,4 @@
+
 const INSUFFICIENT_FUNDS = {
   status: 'INSUFFICIENT_FUNDS',
   change: []
@@ -71,8 +72,8 @@ const checkCashRegister = (price, cash, cid) => {
     return INSUFFICIENT_FUNDS;
   }
 };
-const price = 19.5;
-const cash = 200;
+const price = document.getElementById('price');
+const cash = document.getElementById('payment');
 const cid = [
   ['PENNY', 1.01],
   ['NICKEL', 2.05],
@@ -84,5 +85,22 @@ const cid = [
   ['TWENTY', 60],
   ['ONE HUNDRED', 100]
 ];
-// checkCashRegister(price, cash, cid);
 
+
+
+const cashRegisterFunction = () => {
+  // checkCashRegister(price, cash, cid);
+  
+  document.getElementById('return').innerHTML = checkCashRegister(price, cash, [
+    ['PENNY', 1.01],
+    ['NICKEL', 2.05],
+    ['DIME', 3.1],
+    ['QUARTER', 4.25],
+    ['ONE', 90],
+    ['FIVE', 55],
+    ['TEN', 20],
+    ['TWENTY', 60],
+    ['ONE HUNDRED', 100]
+  ]);
+}
+document.getElementById('button').onClick = cashRegisterFunction();

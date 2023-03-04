@@ -1,0 +1,43 @@
+
+body {
+    background-color: bisque;
+}
+
+header {
+    font-size: 3rem;
+    text-align: center;
+    margin: 20px;
+    padding: 5px;
+    background-color: chartreuse
+}
+
+#instructions {
+    font-size: 1.3rem;
+    text-align: center;
+    padding: 5px;
+    background-color: aquamarine;
+}
+
+#price-div {
+    height: 2rem;
+    background-color: chartreuse
+}
+
+#payment-div {
+    height: 2rem;
+    background-color: aquamarine
+}
+
+#button-div {
+    height: 3rem;
+    background-color: chartreuse;
+}
+button {
+
+}
+
+#change {
+    height: 2rem;
+    background-color: aquamarine;
+}
+

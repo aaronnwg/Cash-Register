@@ -5,8 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cash Register</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="src/main.js" defer></script>
 </head>
 <body>
-    
+    <header>Cash Register</header>
+    <div id="instructions">
+        <p>description/instructions</p>
+    </div>
+        <div id="price-div">
+            <input id='price' type="text" required value="price" />
+        </div>
+        <div id="payment-div">
+            <input id='payment' type="text" required value="payment" />
+        </div>
+        <div id="button-div">
+            <button id="button" type="button">Return Change</button>
+        </div>
+        <div id="change">
+            <p id="return"></p>
+        </div>
 </body>
 </html>
