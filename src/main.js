@@ -72,8 +72,8 @@ const checkCashRegister = (price, cash, cid) => {
     return INSUFFICIENT_FUNDS;
   }
 };
-const price = document.getElementById('price');
-const cash = document.getElementById('payment');
+let price = document.getElementById('price');
+let cash = document.getElementById('payment');
 const cid = [
   ['PENNY', 1.01],
   ['NICKEL', 2.05],
@@ -85,12 +85,13 @@ const cid = [
   ['TWENTY', 60],
   ['ONE HUNDRED', 100]
 ];
-
+const button = document.getElementById('button');
+const returnChange = document.getElementById('return');
 
 
 const cashRegisterFunction = () => {
   // checkCashRegister(price, cash, cid);
   
-  document.getElementById('return').innerHTML = checkCashRegister(price, cash, cid)
+  returnChange.innerHTML = checkCashRegister(price, cash, cid)
 }
-button.onClick = cashRegisterFunction()
+button.onclick = cashRegisterFunction
