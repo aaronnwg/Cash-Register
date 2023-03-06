@@ -13,17 +13,26 @@
     <div id="instructions">
         <p>description/instructions</p>
     </div>
+
         <div id="price-div">
-            <input id='price' type="number" required value="price" />
+            <form>
+                <label for="price" >Purchase Price:
+                    <input id='price' name='price' type="number" required />
+                </label>
+            </form>
         </div>
+
         <div id="payment-div">
-            <input id='payment' type="number" required value="payment" />
+            <label for="payment"> Payment Amount:
+                <input id='payment' type="number" required />
+            </label>
         </div>
         <div id="button-div">
-            <button id="button" type="button">Return Change</button>
+            <button id="button" type="button" >Return Change</button>
         </div>
         <div id="change">
-            <p id="return"></p>
+            <p id="return-change"></p>
+            <p id="return-status"></p>
         </div>
 </body>
 </html>
