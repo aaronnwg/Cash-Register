@@ -1,5 +1,6 @@
-
-
+//IMPORTS
+/*import checkCashRegister from "./module.js";
+console.log(checkCashRegister)*/
 // Variables
 const button = document.getElementById('button');
 const returnChange = document.getElementById('return-change');
@@ -15,13 +16,35 @@ const cid = [
   ['TWENTY', 60],
   ['ONE HUNDRED', 100]
 ];
+console.log(cid)
+//payment
+const cashInput = document.getElementById("payment");
+var payment
+const paymentHandler = e => {
+    cash = e.target.value;
+    console.log(cash);
+    payment = cash
+};
+cashInput.addEventListener('input', paymentHandler);
 
-let cash = document.getElementById('payment');
-let price = document.getElementById('price').value;
-
-
+//price
+const priceInput = document.getElementById("price");
+var newPrice
+const priceHandler = e => {
+  price = e.target.value;
   console.log(price);
-  console.log(cash);
+  newPrice = price
+};
+priceInput.addEventListener('input', priceHandler);
+
+button.onclick = ()=>{
+  document.getElementById('output').innerHTML = payment
+}
+
+
+
+  console.log(newPrice);
+  console.log(payment);
   console.log(cid);
 
-//  button.addEventListener('click', cashRegisterFunction())
+// button.addEventListener('click', cashRegisterFunction())

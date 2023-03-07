@@ -2,11 +2,7 @@ const INSUFFICIENT_FUNDS = {
     status: 'INSUFFICIENT_FUNDS',
     change: []
   };
-  const CLOSED_CID = {
-    status: 'CLOSED',
-    change: []
-  };
-  const POSITION_CID = [
+const POSITION_CID = [
     ['ONE HUNDRED', 100],
     ['TWENTY', 20],
     ['TEN', 10],
@@ -17,8 +13,8 @@ const INSUFFICIENT_FUNDS = {
     ['NICKEL', 0.05],
     ['PENNY', 0.01]
   ];
-  const add = (a, b) => a + b[1];
-  const checkCashRegister = (price, cash, cid) => {
+const add = (a, b) => a + b[1];
+const checkCashRegister = (price, cash, cid) => {
     let finalChange = [];
     let changeDue = cash - price;
     const cidSum = cid.reduce(add, 0).toFixed(2);
@@ -72,6 +68,6 @@ const INSUFFICIENT_FUNDS = {
     }
   };
 
-  const resources = {INSUFFICIENT_FUNDS, CLOSED_CID, POSITION_CID, add, checkCashRegister}
-  export default resources;
+  export default checkCashRegister();
+  
   
