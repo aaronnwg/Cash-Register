@@ -94,6 +94,7 @@ const checkCashRegister = (price, cash, cid) => {
 
 
 console.log(cid)
+//console.log(checkCashRegister(newPrice, payment, cid)) variables not passing to function
 //payment
 const cashInput = document.getElementById("payment");
 var payment
@@ -113,10 +114,13 @@ const priceHandler = e => {
   newPrice = price
 };
 priceInput.addEventListener('input', priceHandler);
+console.log(checkCashRegister(newPrice, payment, cid))
 
+
+/* not working
 button.onclick = ()=>{
-  document.getElementById('output').innerHTML = payment
-}
+  document.getElementById('output').innerHTML = checkCashRegister(newPrice, payment, cid)
+}*/
 
 
 
