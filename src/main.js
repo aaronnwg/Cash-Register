@@ -43,15 +43,15 @@ const checkCashRegister = (price, cash, cid) => {
   let finalChange = [];
   let changeDue = cash - price;
   const cidSum = cid.reduce(add, 0).toFixed(2);
+  let return_result=INSUFFICIENT_FUNDS;
   /*
   If there is exactly enough money to provide change, the
   status key is “CLOSED”, and the change key is cid.
   */
   if (cidSum == changeDue) {
-    return {
-  status: "CLOSED",
-  change: cid
-  };
+    return_result.status = "CLOSED";
+    return_result.change = cid;
+    return return_result;
   }
   /*
   If there is not enough money to provide change, the status key
@@ -83,24 +83,21 @@ const checkCashRegister = (price, cash, cid) => {
     }
   });
   if (changeDue == 0) {
-    return {
-      status: 'OPEN',
-      change: finalChange
-    };
+    return_result.status = "OPEN";
+    return_result.change = finalChange;
+    return return_result;
   } else {
     return INSUFFICIENT_FUNDS;
   }
 };
 
 
-console.log(cid)
 //console.log(checkCashRegister(newPrice, payment, cid)) variables not passing to function
 //payment
 const cashInput = document.getElementById("payment");
 var payment
 const paymentHandler = e => {
     cash = e.target.value;
-    console.log(cash);
     payment = cash
 };
 cashInput.addEventListener('input', paymentHandler);
@@ -110,22 +107,18 @@ const priceInput = document.getElementById("price");
 var newPrice
 const priceHandler = e => {
   price = e.target.value;
-  console.log(price);
   newPrice = price
 };
 priceInput.addEventListener('input', priceHandler);
-console.log(checkCashRegister(newPrice, payment, cid))
 
 
-/* not working
+// not working
 button.onclick = ()=>{
-  document.getElementById('output').innerHTML = checkCashRegister(newPrice, payment, cid)
-}*/
+  const output = checkCashRegister(newPrice, payment, cid);
+  document.getElementById('output').innerHTML = output['change'] + " "+ output['status'];
+}
 
 
 
-  console.log(newPrice);
-  console.log(payment);
-  console.log(cid);
 
 // button.addEventListener('click', cashRegisterFunction())
